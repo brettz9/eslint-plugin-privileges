@@ -8,8 +8,11 @@ privileges in use).
 
 ## To-dos
 
-1. Use `eslint-plugin-import` with sensible defaults for restricting built-in
-    Node modules (e.g., allowing `path` but requiring whitelisting for `fs`).
+1. Use `eslint-plugin-import` with
+    [`no-nodejs-modules`](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-nodejs-modules.md)
+    along with sensible defaults for restricting built-in Node modules (e.g.,
+    allowing `path` but requiring whitelisting for `fs`) and possibly other
+    `eslint-plugin-import` rules.
 1. Aggregate [`globals`](https://www.npmjs.com/package/globals) items into higher
     order groups, e.g., "dom" so that `document`, `HTMLElement`, etc. would be
     allowed by a single item (not including `window`) but not including other items
