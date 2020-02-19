@@ -1,0 +1,33 @@
+{
+  "name": "eslint-plugin-privileges",
+  "version": "0.1.0",
+  "description": "ESLint plugin for checking privileges",
+  "main": "index.js",
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brettz9/eslint-plugin-privileges.git"
+  },
+  "author": "Brett Zamir <brettz9@yahoo.com> (http://brett-zamir.me/)",
+  "contributors": [],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/brettz9/eslint-plugin-privileges/issues"
+  },
+  "homepage": "https://github.com/brettz9/eslint-plugin-privileges#readme",
+  "keywords": [
+    "eslint-plugin",
+    "eslint"
+  ],
+  "dependencies": {
+    "babel-eslint": "^10.0.3"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0"
+  }
+}
