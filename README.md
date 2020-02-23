@@ -18,6 +18,8 @@ privileges in use).
     allowed by a single item (not including `window`) but not including other items
     which may technically be accessible through the DOM `window`, but which are`
     not thought of as such (e.g., `PaymentRequest` or `indexedDB`).
-1. Ensure detection of access to `global`, `globalThis`, `window`, `self`, `parent`,
-    `top`, etc. is restricted, whether of static or dynamic properties.
+1. Ensure detection of access (overwriting, setting properties, or even reading,
+    depending on options) to `global`, `globalThis`, `window`, `self`, `parent`,
+    `top`, etc. is restricted, whether of static or dynamic properties. Note also
+    such as `window.window`.
 1. Add a badge-maker to advertise those privileges required/in use in one's project
