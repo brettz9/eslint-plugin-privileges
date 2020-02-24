@@ -9,7 +9,7 @@ console.log('defaultKeys', defaultKeys);
 
 // Decided againts @babel/traverse, in case might use ESLint AST
 //  for ESLint rules
-const Traverser = require('eslint/lib/shared/traverser.js')
+const Traverser = require('eslint/lib/shared/traverser.js');
 
 const result = parseForESLint(`
     import './abc.js';
