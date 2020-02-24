@@ -26,5 +26,6 @@ privileges in use).
     `define` (`fetch` or `XMLHttpRequest` could be used with `eval` but that
     rule could not be readily used without a lot of complexity). Ensure can
     check any extension found for an imported/required file, not
-    just those at command line.
+    just those at command line. Use <https://www.npmjs.com/package/resolve>
+    to find the next file (for `env: "node"`)
 1. Add a badge-maker to advertise those privileges required/in use in one's project
