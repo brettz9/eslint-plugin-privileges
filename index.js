@@ -5,6 +5,8 @@ const defaultKeys = require('eslint-visitor-keys');
 console.log('defaultKeys', defaultKeys);
 */
 
+// Todo: Should probably just use esquery instead
+
 // Decided againts @babel/traverse, in case might use ESLint AST
 //  for ESLint rules
 const Traverser = require('eslint/lib/shared/traverser.js')
