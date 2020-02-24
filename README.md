@@ -22,4 +22,9 @@ privileges in use).
     depending on options) to `global`, `globalThis`, `window`, `self`, `parent`,
     `top`, etc. is restricted, whether of static or dynamic properties. Note also
     such as `window.window`.
+1. Iterate through files for `require`, `import` (dynamic or static), and maybe
+    `define` (`fetch` or `XMLHttpRequest` could be used with `eval` but that
+    rule could not be readily used without a lot of complexity). Ensure can
+    check any extension found for an imported/required file, not
+    just those at command line.
 1. Add a badge-maker to advertise those privileges required/in use in one's project

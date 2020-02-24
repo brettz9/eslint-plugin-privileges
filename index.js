@@ -1,5 +1,3 @@
-// Can we just use `eslint-plugin-import`?
-
 const {parseForESLint} = require('babel-eslint');
 
 /*
