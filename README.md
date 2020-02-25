@@ -24,16 +24,18 @@ privileges in use).
         allowed by a single item (not including `window`) but not including other items
         which may technically be accessible through the DOM `window`, but which are`
         not thought of as such (e.g., `PaymentRequest` or `indexedDB`).
-1. Means of iteration
-    1. Iterate through files for `require`, `import` (dynamic or static), and maybe
-        `define` (`fetch` or `XMLHttpRequest` could be used with `eval` but that
-        rule could not be readily used without a lot of complexity). Ensure can
-        check any extension found for an imported/required file, not
-        just those at command line. Use <https://www.npmjs.com/package/resolve>
-        to find the next file (for `env: "node"`)
-1. Means of advertising privilege use
-    1. Add a badge-maker to advertise those privileges required/in use in
-        one's project
-1. For general checks into important practices of dependencies, see Home config
-    begun at <https://gist.github.com/brettz9/d473b8435e97abc5a4fae61f12e095bb>.
+1. General checks into important practices of dependencies
+    1. See Home config begun at <https://gist.github.com/brettz9/d473b8435e97abc5a4fae61f12e095bb>.
     Note that eslint limitations apparently prevent `node_modules` checking atm.
+
+1. Secondary concerns
+    1. Means of iteration
+        1. Iterate through files for `require`, `import` (dynamic or static), and maybe
+            `define` (`fetch` or `XMLHttpRequest` could be used with `eval` but that
+            rule could not be readily used without a lot of complexity). Ensure can
+            check any extension found for an imported/required file, not
+            just those at command line. Use <https://www.npmjs.com/package/resolve>
+            to find the next file (for `env: "node"`)
+    1. Means of advertising privilege use
+        1. Add a badge-maker to advertise those privileges required/in use in
+            one's project
