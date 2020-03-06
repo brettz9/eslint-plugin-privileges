@@ -26,7 +26,11 @@ privileges in use).
         not thought of as such (e.g., `PaymentRequest` or `indexedDB`).
 1. General checks into important practices of dependencies
     1. See Home config begun at <https://gist.github.com/brettz9/d473b8435e97abc5a4fae61f12e095bb>.
-    1. Overcome apparent eslint limitations preventing `node_modules` checking????
+    1. One can opt back in by adding this to ignore `!node_modules/**`
+        `$(npm bin)/eslint --no-inline-config --no-eslintrc --ignore-pattern='!node_modules/**' --ignore-pattern='!*.js' --config=".eslintrc.js" --no-ignore .`
+        or with own ignore file:
+        `$(npm bin)/eslint --no-inline-config --no-eslintrc --config=".eslintrc.js" .`
+        1. Should ensure no other extensions are used (where they can be)!
     - `no-eval`
     - `no-global-assign`
     - [no-restricted-globals](https://eslint.org/docs/rules/no-restricted-globals)
