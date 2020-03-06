@@ -74,6 +74,9 @@ Might unbuilt source require files which, when missing in the source, might be s
             With a need to follow through the individual files anyways, we can
             also check along the way whether this is strict mode file or not,
             and lint that file accordingly, avoiding undue parsing failures.
+            Can also avoid errors when the file type is detected as JSON
+            (requiring a JSON file) or if the feature of registering a file
+            type was used (then handling that as appropriate).
     1. Means of advertising privilege use
         1. Add a badge-maker to advertise those privileges required/in use in
             one's project
