@@ -52,8 +52,8 @@ privileges in use).
             `--no-ignore` (note that `--no-eslintrc` does not appear to reject
             `--config` per CLI doc page).
     - Disallow `--exported` from --no-inline-config if not already (or change `no-undef`) if `var window` would cause the item to be ignored? ; note: can use `no-restricted-globals` to blacklist window, etc.
-1. In the npm ecosystem, are there any other loopholes here (besides `install`/`postinstall` scripts which could add/build JavaScript in a way harmful to the system)? (Can one block these?) Propose a `trustedDependencies` which installs versions without build steps, to give security assurances (as long as a missing file would not be searched in a higher directory)?
-Might unbuilt source may require files which, when missing in the source, might be searched higher up mistakenly getting access to the trusted version? See <https://nodejs.org/api/modules.html#modules_all_together> (what is `exports` in `package.json`?).
+1. In the npm ecosystem, are there any other loopholes here (besides `install`/`postinstall` scripts which could add/build JavaScript in a way harmful to the system)? (Besides blocking with `npm install --no-scripts`) Propose a `trustedDependencies` which installs versions without build steps, to give security assurances (as long as a missing file would not be searched in a higher directory)?
+Might unbuilt source require files which, when missing in the source, might be searched higher up mistakenly getting access to the trusted version? See <https://nodejs.org/api/modules.html#modules_all_together> (what is `exports` in `package.json`?).
 
 1. Secondary concerns
     1. Means of iteration
