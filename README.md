@@ -45,6 +45,7 @@ privileges in use).
     1. Get `no-restricted-properties` to work with nested properties (e.g., with a dot, such as `window.window` or `window['window']` so couldn't access `window.window.bad`)? Make special rule against `window.window` or permutations like `top.window`?
     2. Request option to add **whitelist within `no-restricted-properties`**, so can
         permit certain properties on object otherwise blanket blacklisted.
+1. In the npm ecosystem, are there any other loopholes here (besides `install`/`postinstall` scripts which could add/build JavaScript in a way harmful to the system)? (Can one block these?) Propose a `trustedDependencies` which installs versions without build steps, to give security assurances (as long as a missing file would not be searched in a higher directory)?
 
 1. Secondary concerns
     1. Means of iteration
