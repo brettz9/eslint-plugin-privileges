@@ -27,6 +27,13 @@ privileges in use).
 1. General checks into important practices of dependencies
     1. See Home config begun at <https://gist.github.com/brettz9/d473b8435e97abc5a4fae61f12e095bb>.
     Note that eslint limitations apparently prevent `node_modules` checking atm.
+    - `no-eval`
+    - `no-global-assign`
+    - [no-restricted-globals](https://eslint.org/docs/rules/no-restricted-globals)
+    - [no-restricted-properties](https://eslint.org/docs/rules/no-restricted-properties)
+    - [no-restricted-imports](https://eslint.org/docs/rules/no-restricted-imports) (or equivalents in `eslint-plugin-import`?)
+    - [no-restricted-modules](https://eslint.org/docs/rules/no-restricted-modules) (or equivalents in `eslint-plugin-import`?)
+    - https://github.com/mozilla/eslint-plugin-no-unsanitized
 
 1. Secondary concerns
     1. Means of iteration
