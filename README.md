@@ -46,6 +46,7 @@ privileges in use).
     2. Request option to add **whitelist within `no-restricted-properties`**, so can
         permit certain properties on object otherwise blanket blacklisted.
 1. In the npm ecosystem, are there any other loopholes here (besides `install`/`postinstall` scripts which could add/build JavaScript in a way harmful to the system)? (Can one block these?) Propose a `trustedDependencies` which installs versions without build steps, to give security assurances (as long as a missing file would not be searched in a higher directory)?
+Might unbuilt source may require files which, when missing in the source, might be searched higher up mistakenly getting access to the trusted version? See <https://nodejs.org/api/modules.html#modules_all_together> (what is `exports` in `package.json`?).
 
 1. Secondary concerns
     1. Means of iteration
