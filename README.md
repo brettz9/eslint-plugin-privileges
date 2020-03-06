@@ -66,7 +66,11 @@ Might unbuilt source require files which, when missing in the source, might be s
             any binaries that are executed (e.g.,
             `child_process.spawn('node_mod_a')` ->
             `node_modules/.bin/node_mod_a` ->
-            `node_modules/node_mod_a/cli/index.js`)
+            `node_modules/node_mod_a/cli/index.js`); could have linting to ensure
+            though that instead of spawning raw `node_mod` which could conflict with
+            a native `node_mod_a`, should use fixed paths for child processes.
+            Could, however, whitelist certain trusted native executables, albeit
+            with a potential risk of namespace conflicts.
     1. Means of advertising privilege use
         1. Add a badge-maker to advertise those privileges required/in use in
             one's project
