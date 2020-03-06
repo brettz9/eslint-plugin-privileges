@@ -62,7 +62,11 @@ Might unbuilt source require files which, when missing in the source, might be s
             rule could not be readily used without a lot of complexity). Ensure can
             check any extension found for an imported/required file, not
             just those at command line. Use <https://www.npmjs.com/package/resolve>
-            to find the next file (for `env: "node"`)
+            to find the next file (for `env: "node"`); also follow through
+            any binaries that are executed (e.g.,
+            `child_process.spawn('node_mod_a')` ->
+            `node_modules/.bin/node_mod_a` ->
+            `node_modules/node_mod_a/cli/index.js`)
     1. Means of advertising privilege use
         1. Add a badge-maker to advertise those privileges required/in use in
             one's project
