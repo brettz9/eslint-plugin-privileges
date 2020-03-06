@@ -35,6 +35,9 @@ privileges in use).
     - `no-global-assign`
     - [no-restricted-globals](https://eslint.org/docs/rules/no-restricted-globals)
     - [no-restricted-properties](https://eslint.org/docs/rules/no-restricted-properties)
+      1. Get `no-restricted-properties` to work with nested properties (e.g., with a dot, such as `window.window` or `window['window']` so couldn't access `window.window.bad`)? Make special rule against `window.window` or permutations like `top.window`?
+      2. Request option to add **whitelist within `no-restricted-properties`**, so can
+          permit certain properties on object otherwise blanket blacklisted.
     - [no-restricted-imports](https://eslint.org/docs/rules/no-restricted-imports) (or equivalents in `eslint-plugin-import`?)
     - [no-restricted-modules](https://eslint.org/docs/rules/no-restricted-modules) (or equivalents in `eslint-plugin-import`?)
     - https://github.com/mozilla/eslint-plugin-no-unsanitized
@@ -46,9 +49,6 @@ privileges in use).
             `--no-ignore` (note that `--no-eslintrc` does not appear to reject
             `--config` per CLI doc page).
     - Disallow `--exported` from --no-inline-config if not already (or change `no-undef`) if `var window` would cause the item to be ignored? ; note: can use `no-restricted-globals` to blacklist window, etc.
-    1. Get `no-restricted-properties` to work with nested properties (e.g., with a dot, such as `window.window` or `window['window']` so couldn't access `window.window.bad`)? Make special rule against `window.window` or permutations like `top.window`?
-    2. Request option to add **whitelist within `no-restricted-properties`**, so can
-        permit certain properties on object otherwise blanket blacklisted.
 1. In the npm ecosystem, are there any other loopholes here (besides `install`/`postinstall` scripts which could add/build JavaScript in a way harmful to the system)? (Can one block these?) Propose a `trustedDependencies` which installs versions without build steps, to give security assurances (as long as a missing file would not be searched in a higher directory)?
 Might unbuilt source may require files which, when missing in the source, might be searched higher up mistakenly getting access to the trusted version? See <https://nodejs.org/api/modules.html#modules_all_together> (what is `exports` in `package.json`?).
 
