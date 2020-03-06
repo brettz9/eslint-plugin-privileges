@@ -2,7 +2,7 @@
 
 // Use following (assumes `eslint-plugin-privilegs` is in sibling directory):
 /*
-$(npm bin)/eslint --no-eslintrc --no-inline-config --ignore-path="../eslint-plugin-privileges/privileged-ignore.txt" --config="../eslint-plugin-privileges/.eslintrc-privilege-check.js" .
+$(npm bin)/eslint --no-eslintrc --no-inline-config --no-ignore --ignore-path="../eslint-plugin-privileges/privileged-ignore.txt" --config="../eslint-plugin-privileges/.eslintrc-privilege-check.js" .
 */
 
 // INCOMPLETE!!!!
