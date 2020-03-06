@@ -1,3 +1,5 @@
+# Require this with `--ignore-path="privileged-ignore.txt"`
+
 !.*.js
 !node_modules/**
 !bower_components/**

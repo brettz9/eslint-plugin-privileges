@@ -1,5 +1,10 @@
 'use strict';
 
+// Use following (assumes `eslint-plugin-privilegs` is in sibling directory):
+/*
+$(npm bin)/eslint --no-eslintrc --no-inline-config --ignore-path="../eslint-plugin-privileges/privileged-ignore.txt" --config="../eslint-plugin-privileges/.eslintrc-privilege-check.js" .
+*/
+
 // INCOMPLETE!!!!
 
 // Todo: Allow parsing so that `return` can be parsed when used in CLI scripts
