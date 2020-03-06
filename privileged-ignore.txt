@@ -1,4 +1,12 @@
-# Require this with `--ignore-path="privileged-ignore.txt"`
+# Would expect to be able to require this with `--ignore-path="privileged-ignore.txt"`
+# However, the unignores at least do does not seem to work, but one
+# can instead add these arguments:
+# --ignore-pattern='!node_modules/**' --ignore-pattern='!bower_components/**' --ignore-pattern='!*.js'
+
+# Haven't tried the following yet but double quotes might work in Windows and
+# the escaping help it work in Unix (such escaping of `!` isn't needed in
+# Unix for single quotes)
+# --ignore-pattern="\!node_modules/**" --ignore-pattern="\!bower_components/**" --ignore-pattern="\!*.js"
 
 !.*.js
 !node_modules/**

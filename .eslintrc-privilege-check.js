@@ -4,6 +4,7 @@
 /*
 $(npm bin)/eslint --no-eslintrc --no-inline-config --no-ignore --ignore-path="../eslint-plugin-privileges/privileged-ignore.txt" --config="../eslint-plugin-privileges/.eslintrc-privilege-check.js" .
 */
+// If the above doesn't work, see `privileged-ignore.txt`
 
 // INCOMPLETE!!!!
 
