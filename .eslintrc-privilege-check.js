@@ -19,6 +19,8 @@ module.exports = {
       //  for CLI scripts AND keep `sourceType: "module"` (even with `env` of
       //  `node` and/or `commonjs`: `true`) (those would have to be checked
       //  separately and the CLI parsing errors filtered out from the other view).
+      // Could use overrides perhaps to change, but one would need to
+      //   manage for each repo or file
       // globalReturn: true
     }
   }
