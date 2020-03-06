@@ -12,21 +12,21 @@ console.log('defaultKeys', defaultKeys);
 const Traverser = require('eslint/lib/shared/traverser.js');
 
 const result = parseForESLint(`
-    import './abc.js';
-    require('abc');
+  import './abc.js';
+  require('abc');
 `);
 
 // console.log('result', result.ast);
 
 Traverser.traverse(result.ast, {
-    enter (node /* , parent */) {
-        console.log('node', node.type);
-        switch (node.type) {
-        case 'ImportDeclaration':
-            console.log('import declaration', node);
-            break;
-        }
+  enter (node /* , parent */) {
+    console.log('node', node.type);
+    switch (node.type) {
+    case 'ImportDeclaration':
+      console.log('import declaration', node);
+      break;
     }
-    // visitorKeys: []
-    // leave (node, parent)
+  }
+  // visitorKeys: []
+  // leave (node, parent)
 }, {});
