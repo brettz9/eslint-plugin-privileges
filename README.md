@@ -71,6 +71,9 @@ Might unbuilt source require files which, when missing in the source, might be s
             a native `node_mod_a`, should use fixed paths for child processes.
             Could, however, whitelist certain trusted native executables, albeit
             with a potential risk of namespace conflicts.
+            With a need to follow through the individual files anyways, we can
+            also check along the way whether this is strict mode file or not,
+            and lint that file accordingly, avoiding undue parsing failures.
     1. Means of advertising privilege use
         1. Add a badge-maker to advertise those privileges required/in use in
             one's project
