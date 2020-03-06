@@ -9,6 +9,8 @@ module.exports = {
       // Todo: Check for any config
     'no-eval': 2
   },
+  // Need this `parser` (see discussion above `globalReturn` below)
+  parser: 'babel-eslint',
   parserOptions: {
     sourceType: 'module',
     ecmaVersion: 2018,
@@ -21,7 +23,11 @@ module.exports = {
       //  separately and the CLI parsing errors filtered out from the other view).
       // Could use overrides perhaps to change, but one would need to
       //   manage for each repo or file
-      // globalReturn: true
+
+      // However, it turns out we can enable when using `babel-eslint`,
+      //  which may have the additional advantage of being more lenient for
+      //  some other syntaxes that might not yet be supported.
+      globalReturn: true
     }
   }
 };
