@@ -19,8 +19,11 @@ console.log('defaultKeys', defaultKeys);
 //   `window` or other globals are used, but to collect the uses, rather than
 //   report them.
 
-// Could have generic API for whether to traverse through ESM, CJS (and
-//  HTML script tags?), with either a callback or esquer(ies) for how
+// Could have generic API for whether to traverse through ESM, CJS, whether
+//  `import`, `require` or possibly `define` (and HTML script tags even,
+//  noting whether type=module or not, so could note whether there was a
+//  mismach of export type in the discovered files), utilizing import maps,
+//  with either a callback or esquer(ies) for how
 //  to collect the data of interest on each page, then return that result
 //  with file name/path (and module type used, e.g., if multiple module types
 //  are being queried). For linting, we could just get files and then
