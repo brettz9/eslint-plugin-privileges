@@ -30,7 +30,9 @@ console.log('defaultKeys', defaultKeys);
 //  eslint itself, esp. if get as a working demo (in place of, or in addition to,
 //  a set of whitelisted files). Could also have an option to give
 //  an error or report listing files which were not traversed but
-//  within a set of specified files.
+//  within a set of specified files. Could also have a blacklist so that
+//  not end up linting, e.g., `node_modules` (e.g., when linting
+//  non-security issues)
 
 // Decided againts @babel/traverse, in case might use ESLint AST
 //  for ESLint rules
