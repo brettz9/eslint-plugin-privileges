@@ -26,6 +26,10 @@ console.log('defaultKeys', defaultKeys);
 //  are being queried). For linting, we could just get files and then
 //  use `eslint-plugin-query` with the selectors there instead.
 
+// Could propose this traversal mechanism as a command line option for
+//  eslint itself, esp. if get as a working demo (in place of, or in addition to,
+//  a set of whitelisted files).
+
 // Decided againts @babel/traverse, in case might use ESLint AST
 //  for ESLint rules
 const Traverser = require('eslint/lib/shared/traverser.js');
