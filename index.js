@@ -28,7 +28,9 @@ console.log('defaultKeys', defaultKeys);
 
 // Could propose this traversal mechanism as a command line option for
 //  eslint itself, esp. if get as a working demo (in place of, or in addition to,
-//  a set of whitelisted files).
+//  a set of whitelisted files). Could also have an option to give
+//  an error or report listing files which were not traversed but
+//  within a set of specified files.
 
 // Decided againts @babel/traverse, in case might use ESLint AST
 //  for ESLint rules
