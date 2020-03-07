@@ -12,6 +12,13 @@ console.log('defaultKeys', defaultKeys);
 
 // Todo: can probably just use esquery instead for traversal?
 
+// Note: if looking also for what is *exported*, e.g., to know what
+//   globals are, if non-module mode in browser, should look at `var` and
+//   even `const`/`let`; can then use, e.g., for `jsdoc/no-undefined-types`;
+//   as with `no-unrestricted-properties`, etc., we want to find out when
+//   `window` or other globals are used, but to collect the uses, rather than
+//   report them.
+
 // Decided againts @babel/traverse, in case might use ESLint AST
 //  for ESLint rules
 const Traverser = require('eslint/lib/shared/traverser.js');
