@@ -57,7 +57,7 @@ Might unbuilt source require files which, when missing in the source, might be s
 
 1. Secondary concerns
     1. Means of iteration
-        1. See [`eslint-file-traverse`](https://github.com/brettz9/eslint-file-traverse)
+        1. See [`es-file-traverse`](https://github.com/brettz9/es-file-traverse)
     1. Means of advertising privilege use
         1. Add a badge-maker to advertise those privileges required/in use in
             one's project
