@@ -8,7 +8,7 @@ console.log('defaultKeys', defaultKeys);
 // Todo: Aggregate results into a file `Map`, and then perform linting (or
 //  if doing along the way, only perform linting once per discovered file).
 //  But ensure the traversal code is separated so we can have a useful
-//  generic traverser by import/require.
+//  generic traverser by import/require (dynamic or static).
 
 // Todo: can probably just use esquery instead for traversal?
 
@@ -36,6 +36,9 @@ console.log('defaultKeys', defaultKeys);
 //  within a set of specified files. Could also have a blacklist so that
 //  not end up linting, e.g., `node_modules` (e.g., when linting
 //  non-security issues)
+
+// Todo: Could iterate based on following a functin call which would need to
+//  track stacks, e.g., to follow dynamic imports in order
 
 // Could adapt https://github.com/benmosher/eslint-plugin-import/blob/master/utils/moduleVisitor.js#L4-L13
 
