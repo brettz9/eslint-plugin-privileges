@@ -27,7 +27,11 @@ console.log('defaultKeys', defaultKeys);
 //  to collect the data of interest on each page, then return that result
 //  with file name/path (and module type used, e.g., if multiple module types
 //  are being queried). For linting, we could just get files and then
-//  use `eslint-plugin-query` with the selectors there instead.
+//  use `eslint-plugin-query` with the selectors there instead. Could have
+//  `strategies` option for built-in following of requires, but could also
+//  iterate based on following a function call which would need to
+//  track stacks, e.g., to follow dynamic imports in order or when only
+//  needing to check linting on a particular API.
 
 // Could propose this traversal mechanism as a command line option for
 //  eslint itself, esp. if get as a working demo (in place of, or in addition to,
@@ -36,9 +40,6 @@ console.log('defaultKeys', defaultKeys);
 //  within a set of specified files. Could also have a blacklist so that
 //  not end up linting, e.g., `node_modules` (e.g., when linting
 //  non-security issues)
-
-// Todo: Could iterate based on following a functin call which would need to
-//  track stacks, e.g., to follow dynamic imports in order
 
 // Could adapt https://github.com/benmosher/eslint-plugin-import/blob/master/utils/moduleVisitor.js#L4-L13
 
