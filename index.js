@@ -37,6 +37,8 @@ console.log('defaultKeys', defaultKeys);
 //  not end up linting, e.g., `node_modules` (e.g., when linting
 //  non-security issues)
 
+// Could adapt https://github.com/benmosher/eslint-plugin-import/blob/master/utils/moduleVisitor.js#L4-L13
+
 // Decided againts @babel/traverse, in case might use ESLint AST
 //  for ESLint rules
 const Traverser = require('eslint/lib/shared/traverser.js');

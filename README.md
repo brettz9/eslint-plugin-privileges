@@ -80,3 +80,8 @@ Might unbuilt source require files which, when missing in the source, might be s
     1. Means of advertising privilege use
         1. Add a badge-maker to advertise those privileges required/in use in
             one's project
+1. Integrate:
+    1. <https://github.com/HKalbasi/eslint-plugin-toplevel>
+    1. <https://github.com/Rantanen/eslint-plugin-xss>
+    1. <https://github.com/nodesecurity/eslint-plugin-security>
+    1. <https://github.com/nickdeis/eslint-plugin-no-secrets>
