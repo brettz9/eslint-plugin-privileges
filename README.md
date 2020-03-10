@@ -61,6 +61,9 @@ Might unbuilt source require files which, when missing in the source, might be s
     1. Means of advertising privilege use
         1. Add a badge-maker to advertise those privileges required/in use in
             one's project
+    1. Linting (ESLint?) tool to check (and make badge reports for) whether
+        dependency scripts have install/postinstall scripts (so known if
+        will break things to use `--no-scripts`)
 1. Integrate:
     1. <https://github.com/HKalbasi/eslint-plugin-toplevel>
     1. <https://github.com/Rantanen/eslint-plugin-xss>
