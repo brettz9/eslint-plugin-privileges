@@ -74,7 +74,10 @@ Might unbuilt source require files which, when missing in the source, might be s
         and `ClassDeclaration`.
     1. One challenge would be in adapting the selector to whitelist variable
         names (e.g., to allow `a` and `b`, would be:
-        `VariableDeclaration > .declarations[type="VariableDeclarator"][id.name="a"], VariableDeclaration > .declarations[type="VariableDeclarator"][id.name="b"]`).
+        `VariableDeclaration > .declarations[type="VariableDeclarator"][id.name="a"],
+         VariableDeclaration > .declarations[type="VariableDeclarator"][id.name="b"]`).
+    1. Filed <https://github.com/eslint/eslint/issues/13028> to hopefully
+        simplify this.
 1. Secondary concerns
     1. Means of iteration
         1. See [`es-file-traverse`](https://github.com/brettz9/es-file-traverse)
