@@ -70,6 +70,7 @@ Might unbuilt source require files which, when missing in the source, might be s
     and `exports` setting wouldn't be safe, and tracing through HTML script
     tags to ensure a file wasn't used within HTML would be difficult to say
     the least).
+    1. Would need to exclude other declarations like `FunctionDeclaration`
 1. Secondary concerns
     1. Means of iteration
         1. See [`es-file-traverse`](https://github.com/brettz9/es-file-traverse)
