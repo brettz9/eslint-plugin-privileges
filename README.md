@@ -78,6 +78,8 @@ Might unbuilt source require files which, when missing in the source, might be s
          VariableDeclaration > .declarations[type="VariableDeclarator"][id.name="b"]`).
     1. Filed <https://github.com/eslint/eslint/issues/13028> to hopefully
         simplify this.
+    1. `no-implicit-globals` with `lexicalBindings: true` mostly covers this,
+        but has no whitelist option
 1. Secondary concerns
     1. Means of iteration
         1. See [`es-file-traverse`](https://github.com/brettz9/es-file-traverse)
