@@ -71,6 +71,7 @@ Might unbuilt source require files which, when missing in the source, might be s
     tags to ensure a file wasn't used within HTML would be difficult to say
     the least).
     1. Would need to exclude other declarations like `FunctionDeclaration`
+        and `ClassDeclaration`.
 1. Secondary concerns
     1. Means of iteration
         1. See [`es-file-traverse`](https://github.com/brettz9/es-file-traverse)
