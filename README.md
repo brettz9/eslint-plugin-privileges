@@ -59,8 +59,17 @@ Might unbuilt source require files which, when missing in the source, might be s
     environments). Might just use:
     [`no-restricted-syntax`](https://eslint.org/docs/rules/no-restricted-syntax)
     with `Program > VariableDeclaration` and only applied where the environment
-    was known not to be Node or an ESM module.
-
+    was known not to be Node or an ESM module. As eslint has no auto-detection of
+    environment (e.g., such that `overrides` could use `env` as an input rather
+    than result), we could try setting as
+    `Program > VariableDeclaration:not(ImportDeclaration ~ VariableDeclaration)`
+    to exclude when `ImportDeclaration` was a (preceding) sibling, since that
+    would either be unusable if not ESM, or if ESM, variable declarations would
+    be safe. But it seems it would be effectively impossible to reliably detect
+    a file was a Node-only file (checking for `require` calls or `module.exports`
+    and `exports` setting wouldn't be safe, and tracing through HTML script
+    tags to ensure a file wasn't used within HTML would be difficult to say
+    the least).
 1. Secondary concerns
     1. Means of iteration
         1. See [`es-file-traverse`](https://github.com/brettz9/es-file-traverse)
