@@ -72,6 +72,9 @@ Might unbuilt source require files which, when missing in the source, might be s
     the least).
     1. Would need to exclude other declarations like `FunctionDeclaration`
         and `ClassDeclaration`.
+    1. One challenge would be in adapting the selector to whitelist variable
+        names (e.g., to allow `a` and `b`, would be:
+        `VariableDeclaration > .declarations[type="VariableDeclarator"][id.name="a"], VariableDeclaration > .declarations[type="VariableDeclarator"][id.name="b"]`).
 1. Secondary concerns
     1. Means of iteration
         1. See [`es-file-traverse`](https://github.com/brettz9/es-file-traverse)
