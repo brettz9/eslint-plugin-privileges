@@ -56,7 +56,10 @@ privileges in use).
 Might unbuilt source require files which, when missing in the source, might be searched higher up mistakenly getting access to the trusted version? See <https://nodejs.org/api/modules.html#modules_all_together> (what is `exports` in `package.json`?).
 1. Need a new rule like `no-global-vars` so that non-module, browser files cannot
     set globals with `var` (or `const` or `let` which also act as globals in such
-    environments).
+    environments). Might just use:
+    [`no-restricted-syntax`](https://eslint.org/docs/rules/no-restricted-syntax)
+    with `Program > VariableDeclaration` and only applied where the environment
+    was known not to be Node or an ESM module.
 
 1. Secondary concerns
     1. Means of iteration
