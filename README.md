@@ -32,6 +32,8 @@ privileges in use).
         `$(npm bin)/eslint --no-inline-config --no-eslintrc --config=".eslintrc.js" .`
         1. Should ensure no other extensions are used (where they can be)!
     - `no-eval`
+    - `no-prototype-builtins`: though more self-risk related, rather than polluting,
+        can be a hole like `no-eval`
     - `no-extend-native`
     - Rules for checking ES6 templates and string concat to `res.end()` or what not?
         But need to track that string had a user variable
