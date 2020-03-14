@@ -8,12 +8,13 @@ privileges in use).
 
 ## To-dos
 
-1. Prevent Node globals
+1. Prevent Node modules and globals
     1. Use `eslint-plugin-import` with
         [`no-nodejs-modules`](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-nodejs-modules.md)
         along with sensible defaults for restricting built-in Node modules (e.g.,
         allowing `path` but requiring whitelisting for `fs`) and possibly other
         `eslint-plugin-import` rules.
+    1. Prevent modifying `process.argv`
 1. Prevent browser and user globals (with conveniences for enabling DOM portions)
     1. Ensure detection of access (overwriting, setting properties, or even reading,
         depending on options) to `global`, `globalThis`, `window`, `self`, `parent`,
