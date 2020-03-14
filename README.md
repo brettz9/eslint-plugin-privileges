@@ -24,6 +24,10 @@ privileges in use).
         allowed by a single item (not including `window`) but not including other items
         which may technically be accessible through the DOM `window`, but which are`
         not thought of as such (e.g., `PaymentRequest` or `indexedDB`).
+1. Follow or prevent injection of script tags (or dynamic tags?)
+1. Deal with problem of concatenated properties (e.g.,
+    `document['create' + 'Element']`); need to prevent dynamic access
+    on `document` as well as `window`.
 1. General checks into important practices of dependencies
     1. See Home config begun at <https://gist.github.com/brettz9/d473b8435e97abc5a4fae61f12e095bb>.
     1. One can opt back in by adding this to ignore `!node_modules/**`
