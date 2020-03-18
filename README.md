@@ -48,6 +48,10 @@ privileges in use).
       1. Get `no-restricted-properties` to work with nested properties (e.g., with a dot, such as `window.window` or `window['window']` so couldn't access `window.window.bad`)? Make special rule against `window.window` or permutations like `top.window`?
       2. Request option to add **whitelist within `no-restricted-properties`**, so can
           permit certain properties on object otherwise blanket blacklisted.
+      3. Would need to track or forbid assignments/usage, e.g., so that
+            `var w = window; w.window.bad` couldn't work; also would be
+            useful for `eslint-plugin-unsanitized` in tracking
+            elements, e.g., `document.body['inner' + 'HTML']` or `elem[\`${"innerHTML"}\`]`.
     - [no-restricted-imports](https://eslint.org/docs/rules/no-restricted-imports) (or equivalents in `eslint-plugin-import`?)
     - [no-restricted-modules](https://eslint.org/docs/rules/no-restricted-modules) (or equivalents in `eslint-plugin-import`?)
     - https://github.com/mozilla/eslint-plugin-no-unsanitized
