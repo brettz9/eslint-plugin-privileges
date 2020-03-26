@@ -102,6 +102,9 @@ Might unbuilt source require files which, when missing in the source, might be s
         will break things to use `--no-scripts`)
     1. Could also have linting tool to insist that all deps/devDeps were
         pegged to exact version.
+1. Probably will want to use eslint formatters that are source-map aware:
+    1. <https://www.npmjs.com/package/eslint-stylish-mapped>
+    1. <https://www.npmjs.com/package/eslint-path-formatter>
 1. Integrate:
     1. <https://github.com/HKalbasi/eslint-plugin-toplevel>
     1. <https://github.com/Rantanen/eslint-plugin-xss>
