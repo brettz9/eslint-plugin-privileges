@@ -63,8 +63,17 @@ privileges in use).
             `--no-ignore` (note that `--no-eslintrc` does not appear to reject
             `--config` per CLI doc page).
     - Disallow [`--exported`](https://eslint.org/docs/rules/no-unused-vars#exported) from [--no-inline-config](https://eslint.org/docs/user-guide/command-line-interface#inline-configuration-comments) if not already (or change `no-undef`) if `var window` would cause the item to be ignored? ; note: can use `no-restricted-globals` to blacklist window, etc. Filed <https://github.com/eslint/eslint/issues/13013>. Not of great security consequence though as `no-unused-vars` is not as much of a security concern.
-1. In the npm ecosystem, are there any other loopholes here (besides `install`/`postinstall` scripts which could add/build JavaScript in a way harmful to the system)? (Besides blocking with `npm install --no-scripts`) Propose a `trustedDependencies` which installs versions without build steps, to give security assurances (as long as a missing file would not be searched in a higher directory)?
-Might unbuilt source require files which, when missing in the source, might be searched higher up mistakenly getting access to the trusted version? See <https://nodejs.org/api/modules.html#modules_all_together> (what is `exports` in `package.json`?).
+1. In the npm ecosystem, are there any other loopholes here (besides
+    `install`/`postinstall` scripts which could add/build JavaScript in
+    a way harmful to the system)? (Besides blocking with
+    `npm install --no-scripts`) Propose a `trustedDependencies` which
+    installs versions without build steps, to give security assurances
+    (as long as a missing file would not be searched in a higher directory)?
+    Could even have linting to check that no such scripts are even present?
+    Might unbuilt source require files which, when missing in the source,
+    might be searched higher up mistakenly getting access to the trusted
+    version? See <https://nodejs.org/api/modules.html#modules_all_together>
+    (what is `exports` in `package.json`?).
 1. Need a new rule like `no-global-vars` so that non-module, browser files cannot
     set globals with `var` (or `const` or `let` which also act as globals in such
     environments). Might just use:
