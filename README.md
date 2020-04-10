@@ -137,7 +137,10 @@ Note that almost any rule may have its legitimate use cases.
       3. Would need to track or forbid assignments/usage, e.g., so that
             `var w = window; w.window.bad` couldn't work; also would be
             useful for `eslint-plugin-unsanitized` in tracking
-            elements, e.g., `document.body['inner' + 'HTML']` or `elem[\`${"innerHTML"}\`]`.
+            elements, e.g., `document.body['inner' + 'HTML']` or ``elem[`${"innerHTML"}`]``.
+      4. Could have option to allow polyfills (whereby would only set the
+          variable if the same variable were confirmed as `undefined`
+          in the parent `if`), and/or allow user or built-in polyfills.
     - [no-restricted-imports](https://eslint.org/docs/rules/no-restricted-imports) (or equivalents in `eslint-plugin-import`?)
     - [no-restricted-modules](https://eslint.org/docs/rules/no-restricted-modules) (or equivalents in `eslint-plugin-import`?)
     - https://github.com/mozilla/eslint-plugin-no-unsanitized
