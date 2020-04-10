@@ -3,9 +3,9 @@ module.exports = {
   env: {
     commonjs: true,
     es6: true,
-    node: false
+    node: true
   },
-  extends: 'eslint:recommended',
+  extends: ['eslint:recommended'],
   globals: {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly'

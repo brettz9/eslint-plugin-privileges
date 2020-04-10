@@ -1,33 +1,34 @@
 {
   "name": "eslint-plugin-privileges",
   "version": "0.1.0",
-  "description": "ESLint plugin for checking privileges",
-  "main": "index.js",
-  "engines": {
-    "node": ">=8.0.0"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "description": "Rules for reporting excessive privileges or otherwise unwanted practices",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/brettz9/eslint-plugin-privileges.git"
   },
   "author": "Brett Zamir <brettz9@yahoo.com> (http://brett-zamir.me/)",
   "contributors": [],
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/brettz9/eslint-plugin-privileges/issues"
-  },
+  "bugs": "https://github.com/brettz9/eslint-plugin-privileges/issues",
   "homepage": "https://github.com/brettz9/eslint-plugin-privileges#readme",
   "keywords": [
-    "eslint-plugin",
-    "eslint"
+    "eslint",
+    "eslintplugin",
+    "eslint-plugin"
   ],
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "mocha tests --recursive"
+  },
   "dependencies": {
-    "babel-eslint": "^10.1.0"
+    "babel-eslint": "^10.1.0",
+    "requireindex": "~1.1.0"
   },
   "devDependencies": {
-    "eslint": "^6.8.0"
-  }
+    "eslint": "^6.8.0",
+    "mocha": "^3.1.2"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "license": "MIT"
 }

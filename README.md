@@ -1,10 +1,88 @@
 # eslint-plugin-privileges
 
-**This project is not complete**
+Rules for reporting excessive privileges or otherwise unwanted practices.
 
-This is currently just a placeholder for some doodles and considerations on
-using ESLint for detecting privileges (add a badge-maker to list
-privileges in use).
+Especially aimed for linting third-party dependencies. (It is not expected
+to be usable for completely untrusted code for the indefinite future,
+however, though that is the eventual goal.)
+
+**This project is not yet functional**
+
+## Installation
+
+You'll first need to install [ESLint](http://eslint.org):
+
+```
+$ npm i eslint --save-dev
+```
+
+Next, install `eslint-plugin-privileges`:
+
+```
+$ npm install eslint-plugin-privileges --save-dev
+```
+
+**Note:** If you installed ESLint globally (using the `-g` flag) then
+you must also install `eslint-plugin-privileges` globally.
+
+## Usage
+
+Add `privileges` to the plugins section of your `.eslintrc.*` configuration
+file. You can omit the `eslint-plugin-` prefix:
+
+```json
+{
+    "plugins": [
+        "privileges"
+    ]
+}
+```
+
+
+Then configure the rules you want to use under the rules section.
+
+```json
+{
+    "rules": {
+        "privileges/<TODO>": 2
+    }
+}
+```
+
+Or if you want the rules above, you can just use:
+
+```json
+{
+    "extends": [
+        "plugin:privileges/privileges"
+    ]
+}
+```
+
+If you want the rules above, along with these recommended rules
+(external to this library):
+
+```json
+{
+    "rules": {
+        "no-eval": ["error"]
+    }
+}
+```
+
+...you can use:
+
+```json
+{
+    "extends": [
+        "plugin:privileges/recommended"
+    ]
+}
+```
+
+## Supported Rules
+
+- Fill in provided rules here
 
 ## To-dos
 
@@ -36,7 +114,6 @@ privileges in use).
         or with own ignore file:
         `$(npm bin)/eslint --no-inline-config --no-eslintrc --config=".eslintrc.js" .`
         1. Should ensure no other extensions are used (where they can be)!
-    - `no-eval`
     - `no-prototype-builtins`: though more self-risk related, rather than polluting,
         can be a hole like `no-eval`
     - `no-extend-native`
@@ -105,7 +182,7 @@ privileges in use).
         1. See [`es-file-traverse`](https://github.com/brettz9/es-file-traverse)
     1. Means of advertising privilege use
         1. Add a badge-maker to advertise those privileges required/in use in
-            one's project
+            one's project (use [`eslint-formatter-badger`](https://github.com/brettz9/eslint-formatter-badger))
     1. Linting (ESLint?) tool to check (and make badge reports for) whether
         dependency scripts have install/postinstall scripts (so known if
         will break things to use `--no-scripts`)
