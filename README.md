@@ -124,7 +124,8 @@ Note that almost any rule may have its legitimate use cases.
         But need to track that string had a user variable
     - `no-global-assign` - very good but too aggressive, as shouldn't complain
         about user's own defining of globals as much as about overwriting native
-        (though users may be concerned about globals too)
+        (though users may be concerned about globals too); use a version of
+        `no-shadow` instead (since aware of globals)?
     - `'no-redeclare': ['error', { builtinGlobals: true }]` would be good if without
         the rule against redeclaring own variables (unless, as with `no-global-assign`,
         concerned about globals)
