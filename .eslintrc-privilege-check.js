@@ -2,7 +2,9 @@
 
 // Use following (assumes `eslint-plugin-privilegs` is in sibling directory):
 /*
-$(npm bin)/eslint --no-eslintrc --no-inline-config --no-ignore --ignore-path="../eslint-plugin-privileges/privileged-ignore.txt" --config="../eslint-plugin-privileges/.eslintrc-privilege-check.js" .
+$(npm bin)/eslint --no-eslintrc --no-inline-config --no-ignore
+  --ignore-path="../eslint-plugin-privileges/privileged-ignore.txt"
+  --config="../eslint-plugin-privileges/.eslintrc-privilege-check.js" .
 */
 // If the above doesn't work, see `privileged-ignore.txt`
 
@@ -12,7 +14,7 @@ $(npm bin)/eslint --no-eslintrc --no-inline-config --no-ignore --ignore-path="..
 
 module.exports = {
   rules: {
-      // Todo: Check for any config
+    // Todo: Check for any config
     'no-eval': 2
   },
   // Need this `parser` (see discussion above `globalReturn` below)
@@ -26,7 +28,8 @@ module.exports = {
       //  or CLI scripts, so we can't enable this to prevent the parsing errors
       //  for CLI scripts AND keep `sourceType: "module"` (even with `env` of
       //  `node` and/or `commonjs`: `true`) (those would have to be checked
-      //  separately and the CLI parsing errors filtered out from the other view).
+      //  separately and the CLI parsing errors filtered out from the
+      //  other view).
       // Could use overrides perhaps to change, but one would need to
       //   manage for each repo or file
 

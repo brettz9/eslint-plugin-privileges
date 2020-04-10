@@ -2,9 +2,10 @@
 
 Rules for reporting excessive privileges or otherwise unwanted practices.
 
-Especially aimed for linting third-party dependencies. (It is not expected
+Especially aimed for linting third-party dependencies. It is not expected
 to be usable for completely untrusted code for the indefinite future,
-however, though that is the eventual goal.)
+however, though that is an eventual goal. Its utility now should be in
+checking for, and alerting dependency authors, for intrusive practices.
 
 **This project is not yet functional**
 
@@ -65,7 +66,8 @@ If you want the rules above, along with these recommended rules
 ```json
 {
     "rules": {
-        "no-eval": ["error"]
+        "no-eval": ["error"],
+        "no-extend-native": ["error"]
     }
 }
 ```
@@ -79,6 +81,8 @@ If you want the rules above, along with these recommended rules
     ]
 }
 ```
+
+Note that almost any rule may have its legitimate use cases.
 
 ## Supported Rules
 
@@ -116,10 +120,14 @@ If you want the rules above, along with these recommended rules
         1. Should ensure no other extensions are used (where they can be)!
     - `no-prototype-builtins`: though more self-risk related, rather than polluting,
         can be a hole like `no-eval`
-    - `no-extend-native`
     - Rules for checking ES6 templates and string concat to `res.end()` or what not?
         But need to track that string had a user variable
-    - `no-global-assign`
+    - `no-global-assign` - very good but too aggressive, as shouldn't complain
+        about user's own defining of globals as much as about overwriting native
+        (though users may be concerned about globals too)
+    - `'no-redeclare': ['error', { builtinGlobals: true }]` would be good if without
+        the rule against redeclaring own variables (unless, as with `no-global-assign`,
+        concerned about globals)
     - [no-restricted-globals](https://eslint.org/docs/rules/no-restricted-globals)
     - [no-restricted-properties](https://eslint.org/docs/rules/no-restricted-properties)
       1. Get `no-restricted-properties` to work with nested properties (e.g., with a dot, such as `window.window` or `window['window']` so couldn't access `window.window.bad`)? Make special rule against `window.window` or permutations like `top.window`?
@@ -177,6 +185,8 @@ If you want the rules above, along with these recommended rules
         simplify this.
     1. `no-implicit-globals` with `lexicalBindings: true` mostly covers this,
         but has no whitelist option; filed <https://github.com/eslint/eslint/issues/13033>.
+1. While this focuses on intrusiveness, there is also a need for linting
+    others' code for likely bugs (beyond just stylistic issues)
 1. Secondary concerns
     1. Means of iteration
         1. See [`es-file-traverse`](https://github.com/brettz9/es-file-traverse)
@@ -196,3 +206,8 @@ If you want the rules above, along with these recommended rules
     1. <https://github.com/Rantanen/eslint-plugin-xss>
     1. <https://github.com/nodesecurity/eslint-plugin-security>
     1. <https://github.com/nickdeis/eslint-plugin-no-secrets>
+1. Would be helpful to be able to allow in `overrides` specification that
+    a rule should only be overridden a certain number of times (e.g.,
+    one may know that `eval` must be used once in a file, but to
+    be informed of need to reevaluate amount if a dependency adds another).
+1. Make more subconfigs, e.g., for preventing globals
