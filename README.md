@@ -141,6 +141,12 @@ Note that almost any rule may have its legitimate use cases.
       4. Could have option to allow polyfills (whereby would only set the
           variable if the same variable were confirmed as `undefined`
           in the parent `if`), and/or allow user or built-in polyfills.
+          1. Could limit to whitelisted polyfills (and for a whitelisted
+              file only) so a polyfill one was deliberately using would
+              nevertheless not be permitted to set other globals.
+              (Could use `overrides`, but might be easier as this really
+              calls out for having an option to restrict to a certain
+              single file only.)
     - [no-restricted-imports](https://eslint.org/docs/rules/no-restricted-imports) (or equivalents in `eslint-plugin-import`?)
     - [no-restricted-modules](https://eslint.org/docs/rules/no-restricted-modules) (or equivalents in `eslint-plugin-import`?)
     - https://github.com/mozilla/eslint-plugin-no-unsanitized
