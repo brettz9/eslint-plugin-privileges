@@ -203,6 +203,7 @@ Note that almost any rule may have its legitimate use cases.
     1. Means of advertising privilege use
         1. Add a badge-maker to advertise those privileges required/in use in
             one's project (use [`eslint-formatter-badger`](https://github.com/brettz9/eslint-formatter-badger))
+            1. Create rule map to go with config (for security rules)
     1. Linting (ESLint?) tool to check (and make badge reports for) whether
         dependency scripts have install/postinstall scripts (so known if
         will break things to use `--no-scripts`)
