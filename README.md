@@ -200,8 +200,9 @@ Note that almost any rule may have its legitimate use cases.
 1. Secondary concerns
     1. Means of iteration
         1. See [`es-file-traverse`](https://github.com/brettz9/es-file-traverse)
-            1. Once project may be function, document applicability of
-                `es-file-traverse`
+            1. Once project may be functional, document applicability of
+                `es-file-traverse` and supply it with a security-related
+                `ruleMap`.
     1. Means of advertising privilege use
         1. Add a badge-maker to advertise those privileges required/in use in
             one's project (use [`eslint-formatter-badger`](https://github.com/brettz9/eslint-formatter-badger))
