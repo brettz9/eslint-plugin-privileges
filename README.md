@@ -220,6 +220,7 @@ Note that almost any rule may have its legitimate use cases.
     1. <https://github.com/Rantanen/eslint-plugin-xss>
     1. <https://github.com/nodesecurity/eslint-plugin-security>
     1. <https://github.com/nickdeis/eslint-plugin-no-secrets>
+    1. <https://github.com/mozfreddyb/eslint-config-scanjs> (with <https://github.com/mozfreddyb/eslint-plugin-scanjs-rules>)
 1. Would be helpful to be able to allow in `overrides` specification that
     a rule should only be overridden a certain number of times (e.g.,
     one may know that `eval` must be used once in a file, but to
