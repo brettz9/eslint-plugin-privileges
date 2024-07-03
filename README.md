@@ -105,7 +105,7 @@ Note that almost any rule may have its legitimate use cases.
     1. Aggregate [`globals`](https://www.npmjs.com/package/globals) items into higher
         order groups, e.g., "dom" so that `document`, `HTMLElement`, etc. would be
         allowed by a single item (not including `window`) but not including other items
-        which may technically be accessible through the DOM `window`, but which are`
+        which may technically be accessible through the DOM `window`, but which are
         not thought of as such (e.g., `PaymentRequest` or `indexedDB`).
 1. Follow or prevent injection of script tags (or dynamic tags?)
 1. Deal with problem of concatenated properties (e.g.,
